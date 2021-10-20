@@ -24,16 +24,6 @@
                                     <constraint firstAttribute="width" secondItem="dS8-Nx-no2" secondAttribute="height" multiplier="1:1" id="bnu-HD-mfF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hF3-RF-ykt">
-                                <rect key="frame" x="54" y="410" width="227" height="31"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="hF3-RF-ykt" secondAttribute="height" multiplier="169:31" constant="58" id="ADr-I4-5xk"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="START"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNH-mq-bHz">
                                 <rect key="frame" x="104" y="20" width="112" height="112"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -48,6 +38,16 @@
                                     <constraint firstAttribute="width" secondItem="upS-Yd-2PX" secondAttribute="height" multiplier="1:1" id="awz-Fb-MEO"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hF3-RF-ykt">
+                                <rect key="frame" x="47" y="409" width="227" height="31"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hF3-RF-ykt" secondAttribute="height" multiplier="169:31" constant="58" id="ADr-I4-5xk"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="START"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZuR-BD-6jQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,11 +62,16 @@
                             <constraint firstItem="ZuR-BD-6jQ" firstAttribute="bottom" secondItem="upS-Yd-2PX" secondAttribute="bottom" constant="108" id="Ro3-uM-qOd"/>
                             <constraint firstItem="upS-Yd-2PX" firstAttribute="width" secondItem="LNH-mq-bHz" secondAttribute="width" id="YxI-AV-Rp2"/>
                             <constraint firstItem="dS8-Nx-no2" firstAttribute="width" secondItem="LNH-mq-bHz" secondAttribute="width" id="eON-zp-nil"/>
-                            <constraint firstItem="hF3-RF-ykt" firstAttribute="centerX" secondItem="ZuR-BD-6jQ" secondAttribute="centerX" constant="7.5" id="iVZ-yN-nXk"/>
-                            <constraint firstItem="ZuR-BD-6jQ" firstAttribute="bottom" secondItem="hF3-RF-ykt" secondAttribute="bottom" constant="39" id="kJV-L2-WR2"/>
+                            <constraint firstItem="hF3-RF-ykt" firstAttribute="centerX" secondItem="ZuR-BD-6jQ" secondAttribute="centerX" constant="0.5" id="iVZ-yN-nXk"/>
+                            <constraint firstItem="ZuR-BD-6jQ" firstAttribute="bottom" secondItem="hF3-RF-ykt" secondAttribute="bottom" constant="40" id="kJV-L2-WR2"/>
                             <constraint firstItem="upS-Yd-2PX" firstAttribute="centerX" secondItem="7xj-Oc-wkr" secondAttribute="centerX" id="uIL-8t-eQJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLight" destination="upS-Yd-2PX" id="LN4-OU-7ZY"/>
+                        <outlet property="redLight" destination="LNH-mq-bHz" id="qR1-4V-zeT"/>
+                        <outlet property="yellowLight" destination="dS8-Nx-no2" id="9OK-2S-GaO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
