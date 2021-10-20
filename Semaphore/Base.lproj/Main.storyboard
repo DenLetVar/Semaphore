@@ -47,6 +47,9 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="START"/>
+                                <connections>
+                                    <action selector="buttonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Nn-Pf-KE0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZuR-BD-6jQ"/>
@@ -70,6 +73,7 @@
                     <connections>
                         <outlet property="greenLight" destination="upS-Yd-2PX" id="LN4-OU-7ZY"/>
                         <outlet property="redLight" destination="LNH-mq-bHz" id="qR1-4V-zeT"/>
+                        <outlet property="startButton" destination="hF3-RF-ykt" id="htm-QP-lti"/>
                         <outlet property="yellowLight" destination="dS8-Nx-no2" id="9OK-2S-GaO"/>
                     </connections>
                 </viewController>
