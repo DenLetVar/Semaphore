@@ -16,29 +16,42 @@ class ViewController: UIViewController {
     @IBOutlet var startButton: UIButton!
     var light = 0
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redLight.layer.cornerRadius = redLight.frame.size.height
-        yellowLight.layer.cornerRadius = yellowLight.frame.size.height
-        greenLight.layer.cornerRadius = greenLight.frame.size.width
         
         redLight.alpha = 0.3
         yellowLight.alpha = 0.3
         greenLight.alpha = 0.3
         
     }
+    override func viewWillLayoutSubviews (){
+        redLight.layer.masksToBounds = true
+        redLight.layer.cornerRadius = redLight.frame.height / 2
+        redLight.clipsToBounds = true
+        yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
+        yellowLight.clipsToBounds = true
+        greenLight.layer.cornerRadius = greenLight.frame.width / 2
+        greenLight.clipsToBounds = true
+    }
+   
     @IBAction func buttonPressed() {
         startButton.setTitle("Next", for: .normal)
-        light += 1
-        switch light {
-        case 1: redLight.alpha = 1; yellowLight.alpha = 0.3; greenLight.alpha = 0.3
-        case 2: yellowLight.alpha = 1; redLight.alpha = 0.3; greenLight.alpha = 0.3
-        case 3: greenLight.alpha = 1; redLight.alpha = 0.3; yellowLight.alpha = 0.3
-        default:light = 0
+        if light == 0 {
+        redLight.alpha = 1; yellowLight.alpha = 0.3; greenLight.alpha = 0.3
+            light += 1
+        } else if light == 1 {
+            yellowLight.alpha = 1; redLight.alpha = 0.3; greenLight.alpha = 0.3
+            light += 1
+        } else if light == 2 {
+            greenLight.alpha = 1; redLight.alpha = 0.3; yellowLight.alpha = 0.3
+            light = 0
         }
         
         
+
        
     }
 }
