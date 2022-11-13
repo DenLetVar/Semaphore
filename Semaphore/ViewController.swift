@@ -12,12 +12,15 @@ enum CurrentLight {
 }
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var redLight: UIView!
     @IBOutlet var yellowLight: UIView!
     @IBOutlet var greenLight: UIView!
     @IBOutlet var startButton: UIButton!
-    var numberOfLight = 0
+    
+    private var currentLight = CurrentLight.red
+    private let lightIsOn: CGFloat = 1
+    private let lightIsOFF: CGFloat = 0.4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,20 +36,23 @@ class ViewController: UIViewController {
         greenLight.layer.cornerRadius = greenLight.frame.width / 2
         greenLight.clipsToBounds = true
     }
-
+    
     @IBAction func startPressed() {
         startButton.setTitle("NEXT", for: .normal)
-        numberOfLight += 1
-        if numberOfLight == 1 {
-            redLight.alpha = 1
-            greenLight.alpha = 0.5
-        } else if numberOfLight == 2 {
-            yellowLight.alpha = 1
-            redLight.alpha = 0.5
-        } else {
-            greenLight.alpha = 1
-            yellowLight.alpha = 0.5
-            numberOfLight = 0
+        
+        switch currentLight {
+        case .red:
+            greenLight.alpha = lightIsOFF
+            redLight.alpha = lightIsOn
+            currentLight = .yellow
+        case .yellow:
+            redLight.alpha = lightIsOFF
+            yellowLight.alpha = lightIsOn
+            currentLight = .green
+        case .green:
+            yellowLight.alpha = lightIsOFF
+            greenLight.alpha = lightIsOn
+            currentLight = .red
         }
     }
     
